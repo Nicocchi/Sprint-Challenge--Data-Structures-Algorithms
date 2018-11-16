@@ -3,10 +3,10 @@ Add your answers to the Algorithms exercises here.
 **Exercise I**:
 
 1. a = 0 is O(1)
-   while (a < n * n * n) is O(n) because we are looping for n times
+   while (a < n * n * n) is O(log n) because we are looping for n times
     a = a + n * n is O(1)
 
-   So, *O(n)* because O(n) could be greater than O(1). If the while loop was constant it could have been different, but since we are looping *n* times and n keeps changing, it becomes O(n)
+   So, *O(log n)* because while n is constant, we are doing x amount of interations for n times
 
 2. sum = 0 is O(1)
     for (i = 0; i < n; i++) is O(n)
