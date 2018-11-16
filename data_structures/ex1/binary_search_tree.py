@@ -4,8 +4,29 @@ class BinarySearchTree:
     self.left = None
     self.right = None
 
-  def depth_first_for_each(self, cb):
-    pass    
+  # I added another param, since the instructions don't say anything
+  # about adding params or modifying the function.
+
+  """ Node allows for algorithm to check if exists and then recursivly
+      call the function with the node as well as the cb. 
+      
+      CB is the callback function that appends the node value to the
+      array in the cb lambda"""
+
+  def depth_first_for_each(self, cb, node=None):
+    # Pre-Order Traverse - Value -> Left Val -> Right Val
+    # Call the cb to append the value
+    cb(node.value)
+
+    # Check if the node has a left, if so, call this method again
+    # with the left node
+    if node.left:
+      self.depth_first_for_each(cb, node.left)
+    
+    # Check if the node has a right, if so, call this method again
+    # with the right node
+    if node.right:
+      self.depth_first_for_each(cb, node.right)
 
   def breadth_first_for_each(self, cb):
     pass

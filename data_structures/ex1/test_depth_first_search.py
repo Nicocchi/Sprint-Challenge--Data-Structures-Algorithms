@@ -9,7 +9,7 @@ class BinarySearchTreeTests(unittest.TestCase):
     arr = []
     cb = lambda x: arr.append(x)
 
-    self.bst.depth_first_for_each(cb)
+    self.bst.depth_first_for_each(cb, self.bst)
 
     self.assertEqual(arr, [5])
 
@@ -21,7 +21,7 @@ class BinarySearchTreeTests(unittest.TestCase):
     self.bst.insert(3)
     self.bst.insert(7)
     self.bst.insert(9)
-    self.bst.depth_first_for_each(cb)
+    self.bst.depth_first_for_each(cb, self.bst)
 
     self.assertEqual(arr, [5, 2, 3, 7, 9])
 
