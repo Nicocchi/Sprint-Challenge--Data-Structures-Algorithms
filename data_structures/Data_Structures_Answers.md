@@ -10,7 +10,11 @@ Answer: O(n)
 
 3. What is the runtime complexity of your `breadth_first_for_each` method?
 
+Answer: O(n)
+
 4. What is the space complexity of your `breadth_first_for_each` method?
+
+Answer: O(n)
 
 5. What is the runtime complexity of your `heapsort` function?
 

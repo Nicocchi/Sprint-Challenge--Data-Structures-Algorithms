@@ -1,3 +1,5 @@
+from queue import *
+
 class BinarySearchTree:
   def __init__(self, value):
     self.value = value
@@ -29,7 +31,28 @@ class BinarySearchTree:
       self.depth_first_for_each(cb, node.right)
 
   def breadth_first_for_each(self, cb):
-    pass
+    # Create a new queue - using the built in Queue class
+    queue = Queue()
+
+    # Add first node to the queue
+    queue.put(self)
+
+    # While the queue is not empty perform the recursive search
+    while not queue.empty():
+
+      # Set self equal to the queue to get
+      self = queue.get()
+
+      # Add the value to the cb
+      cb(self.value)
+
+      # Check if left and right exists and add the nodes to the queue
+      if self.left:
+        queue.put(self.left)
+
+      if self.right:
+        queue.put(self.right)
+
 
   def insert(self, value):
     new_tree = BinarySearchTree(value)
