@@ -1,5 +1,38 @@
 def heapsort(arr):
- pass 
+ # Initialize a new heap
+ he = Heap()
+
+ # loop through the array and insert each element into the heap
+ for elem in arr:
+  he.insert(elem)
+
+ # Initializ a new list
+ narr = []
+ 
+ # Get the length of the heap
+ size = he.get_size()
+
+ # Loop through till we get to the size of the heap
+ # and insert each max element at the beginning of the list.
+ # This sorts the heap without calling the sorted/sort method.
+ # The delete the item from the heap.
+ for i in range(0, size):
+  narr.insert(0, he.get_max())
+  he.delete()
+
+ # Return the newly created list
+ return narr
+
+ # NOTES:
+ # I assumed it wanted us to create a heapsort with using the Heap class,
+ # otherwise, I don't see the point in having the heap there. The tests wanted
+ # it to be min -> max, while the heap is a max heap, so I used the
+ # for in range to do the sorting for a min -> max. I could have used the
+ # sorted(he.storage), but that wouldn't delete the value ones it was done
+ # from the heap. Or I could have done, sorted(narr) and just had them inserted
+ # from max -> min but I felt if I was already doing a loop I could just
+ # have just inserted at the beginning of the list and then deleted it
+ # from the heap.
  
 
 class Heap:
